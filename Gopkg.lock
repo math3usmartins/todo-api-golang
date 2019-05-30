@@ -2,6 +2,18 @@
 
 
 [[projects]]
+  digest = "1:8eacd45a4fb9c351d20c6050ae91783a844f171e65470fca0380c30a5eabb726"
+  name = "github.com/DATA-DOG/godog"
+  packages = [
+    ".",
+    "colors",
+    "gherkin",
+  ]
+  pruneopts = "UT"
+  revision = "8e7bc15e741c4f6c93c0fc2e797ed869cbc1b8f7"
+  version = "v0.7.13"
+
+[[projects]]
   digest = "1:ec6f9bf5e274c833c911923c9193867f3f18788c461f76f05f62bb1510e0ae65"
   name = "github.com/go-sql-driver/mysql"
   packages = ["."]
@@ -20,6 +32,9 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  input-imports = ["github.com/go-sql-driver/mysql"]
+  input-imports = [
+    "github.com/DATA-DOG/godog",
+    "github.com/go-sql-driver/mysql",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1
