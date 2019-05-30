@@ -10,17 +10,11 @@ import (
 func FeatureContext(s *godog.Suite) {
 	var err error
 
-	dsn := os.Getenv("TODO_API_DATABASE_DSN")
-
 	driver := mysql.MySQLDriver{}
 
-	_, err = driver.Open(dsn)
-
-	if err != nil {
-		panic(err)
-	}
-
 	adapter := bootstrap.NewDatabase(driver)
+
+	err = adapter.Connect(os.Getenv("TODO_API_DATABASE_DSN"))
 
 	if err != nil {
 		panic(err)
