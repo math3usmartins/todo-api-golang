@@ -32,3 +32,9 @@ func (repository MysqlRepository) Get(uuid string) (account.Account, error) {
 
 	return foundAccount, nil
 }
+
+func (repository MysqlRepository) FindByEmail(email string) (account.Account, error) {
+	var foundAccount account.Account
+
+	return foundAccount, nil
+}

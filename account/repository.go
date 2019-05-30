@@ -5,4 +5,5 @@ type Repository interface {
 	Update(uuid string, account Account) error
 	Delete(uuid string) error
 	Get(uuid string) (Account, error)
+	FindByEmail(email string) (Account, error)
 }
