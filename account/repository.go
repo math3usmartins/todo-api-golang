@@ -1,9 +1,9 @@
 package account
 
 type Repository interface {
-	Create(account Account) error
-	Update(uuid string, account Account) error
+	Create(user User) error
+	Update(uuid string, user User) error
 	Delete(uuid string) error
-	Get(uuid string) (Account, error)
-	FindByEmail(email string) (Account, error)
+	Get(uuid string) (User, error)
+	FindByEmail(email string) (User, error)
 }

@@ -15,11 +15,11 @@ func (repository MysqlRepository) WithAdapter(adapter mysql.Adapter) error {
 	return nil
 }
 
-func (repository MysqlRepository) Create(account account.Account) error {
+func (repository MysqlRepository) Create(user account.User) error {
 	return nil
 }
 
-func (repository MysqlRepository) Update(uuid string, account account.Account) error {
+func (repository MysqlRepository) Update(uuid string, user account.User) error {
 	return nil
 }
 
@@ -27,14 +27,14 @@ func (repository MysqlRepository) Delete(uuid string) error {
 	return nil
 }
 
-func (repository MysqlRepository) Get(uuid string) (account.Account, error) {
-	var foundAccount account.Account
+func (repository MysqlRepository) Get(uuid string) (account.User, error) {
+	var user account.User
 
-	return foundAccount, nil
+	return user, nil
 }
 
-func (repository MysqlRepository) FindByEmail(email string) (account.Account, error) {
-	var foundAccount account.Account
+func (repository MysqlRepository) FindByEmail(email string) (account.User, error) {
+	var user account.User
 
-	return foundAccount, nil
+	return user, nil
 }

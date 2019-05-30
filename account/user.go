@@ -1,6 +1,6 @@
 package account
 
-type Account struct {
+type User struct {
 	uuid     string
 	email    string
 	password string
