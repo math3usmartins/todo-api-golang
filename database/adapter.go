@@ -1,5 +1,5 @@
 package database
 
-type Driver interface {
+type Adapter interface {
 	Connect(dsn string) error
 }

@@ -2,15 +2,15 @@ package repository
 
 import (
 	"math3usmartins.com/todo-api-golang/account"
-	"math3usmartins.com/todo-api-golang/database"
+	"math3usmartins.com/todo-api-golang/database/mysql"
 )
 
 type MysqlRepository struct {
-	driver database.Driver
+	adapter mysql.Adapter
 }
 
-func (repository MysqlRepository) WithDriver(driver database.Driver) error {
-	repository.driver = driver
+func (repository MysqlRepository) WithAdapter(adapter mysql.Adapter) error {
+	repository.adapter = adapter
 
 	return nil
 }
