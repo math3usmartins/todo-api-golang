@@ -13,17 +13,19 @@ type Adapter struct {
 func (adapter Adapter) Connect(dsn string) error {
 	connection, err := adapter.driver.Open(dsn)
 
+	if err != nil {
+		return err
+	}
+
 	adapter.connection = connection
 
 	defer adapter.connection.Close()
 
-	return err
+	return nil
 }
 
-func (adapter Adapter) WithDriver(driver mysql.MySQLDriver) error {
+func (adapter Adapter) WithDriver(driver mysql.MySQLDriver) {
 	adapter.driver = driver
-
-	return nil
 }
 
 func (adapter Adapter) GetDriver() mysql.MySQLDriver {
