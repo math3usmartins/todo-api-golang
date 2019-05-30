@@ -1,8 +1,8 @@
 package account
 
 type User struct {
-	uuid     string
-	email    string
-	password string
-	roles    []string
+	Uuid     string
+	Email    string
+	Password string
+	Roles    []string
 }
