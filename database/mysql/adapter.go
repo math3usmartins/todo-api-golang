@@ -1,13 +1,23 @@
 package mysql
 
-import "github.com/go-sql-driver/mysql"
+import (
+	"database/sql/driver"
+	"github.com/go-sql-driver/mysql"
+)
 
 type Adapter struct {
-	driver mysql.MySQLDriver
+	driver     mysql.MySQLDriver
+	connection driver.Conn
 }
 
 func (adapter Adapter) Connect(dsn string) error {
-	return nil
+	connection, err := adapter.driver.Open(dsn)
+
+	adapter.connection = connection
+
+	defer adapter.connection.Close()
+
+	return err
 }
 
 func (adapter Adapter) WithDriver(driver mysql.MySQLDriver) error {
