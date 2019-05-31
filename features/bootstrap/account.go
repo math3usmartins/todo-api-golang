@@ -25,7 +25,7 @@ func (accountContext AccountContext) TheAccountServiceIsCalledToCreateAUserWithT
 
 	row := dataTable.Rows[1]
 
-	err = accountContext.service.SignUp(
+	_, err = accountContext.service.SignUp(
 		row.Cells[0].Value,
 		row.Cells[1].Value,
 	)

@@ -10,6 +10,8 @@ func (service Service) WithRepository(repository Repository) {
 	service.repository = repository
 }
 
-func (service Service) SignUp(email string, password string) error {
-	return errors.New("This method needs to be implemented.")
+func (service Service) SignUp(email string, password string) (User, error) {
+	var user User
+
+	return user, errors.New("This method needs to be implemented.")
 }
