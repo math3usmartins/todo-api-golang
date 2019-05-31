@@ -1,4 +1,4 @@
-package repository
+package mysql
 
 import (
 	"errors"
@@ -6,27 +6,27 @@ import (
 	"math3usmartins.com/todo-api-golang/database/mysql"
 )
 
-type MysqlRepository struct {
+type Repository struct {
 	adapter mysql.Adapter
 }
 
-func (repository MysqlRepository) WithAdapter(adapter mysql.Adapter) {
+func (repository Repository) WithAdapter(adapter mysql.Adapter) {
 	repository.adapter = adapter
 }
 
-func (repository MysqlRepository) Create(user account.User) error {
+func (repository Repository) Create(user account.User) error {
 	return errors.New("This method needs to be implemented.")
 }
 
-func (repository MysqlRepository) Update(uuid string, user account.User) error {
+func (repository Repository) Update(uuid string, user account.User) error {
 	return errors.New("This method needs to be implemented.")
 }
 
-func (repository MysqlRepository) Delete(uuid string) error {
+func (repository Repository) Delete(uuid string) error {
 	return errors.New("This method needs to be implemented.")
 }
 
-func (repository MysqlRepository) Get(uuid string) (account.User, error) {
+func (repository Repository) Get(uuid string) (account.User, error) {
 	var user account.User
 	var err error
 
@@ -35,7 +35,7 @@ func (repository MysqlRepository) Get(uuid string) (account.User, error) {
 	return user, err
 }
 
-func (repository MysqlRepository) FindByEmail(email string) (account.User, error) {
+func (repository Repository) FindByEmail(email string) (account.User, error) {
 	var user account.User
 	var err error
 
