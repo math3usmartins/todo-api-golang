@@ -5,10 +5,9 @@ import (
 	"math3usmartins.com/todo-api-golang/database/mysql"
 )
 
-func NewRepository(adapter mysql.Adapter) (repository.MysqlRepository, error) {
+func NewRepository(adapter mysql.Adapter) repository.MysqlRepository {
 	repo := repository.MysqlRepository{}
+	repo.WithAdapter(adapter)
 
-	err := repo.WithAdapter(adapter)
-
-	return repo, err
+	return repo
 }

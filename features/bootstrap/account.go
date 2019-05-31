@@ -15,11 +15,7 @@ type AccountContext struct {
 func (accountContext AccountContext) Init(adapter mysql.Adapter) error {
 	var err error
 
-	accountRepository, err := repository.NewRepository(adapter)
-
-	if err != nil {
-		return err
-	}
+	accountRepository := repository.NewRepository(adapter)
 
 	service := account.Service{}
 

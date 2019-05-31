@@ -9,10 +9,8 @@ type MysqlRepository struct {
 	adapter mysql.Adapter
 }
 
-func (repository MysqlRepository) WithAdapter(adapter mysql.Adapter) error {
+func (repository MysqlRepository) WithAdapter(adapter mysql.Adapter) {
 	repository.adapter = adapter
-
-	return nil
 }
 
 func (repository MysqlRepository) Create(user account.User) error {
