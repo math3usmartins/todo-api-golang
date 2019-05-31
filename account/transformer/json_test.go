@@ -35,7 +35,7 @@ func TestJsonTransformer(t *testing.T) {
 		}
 
 		if string(expectedJson) != actual {
-			t.Errorf("Actual does match expected JSON. Expected '%s'. Got '%s'", expectedJson, actual)
+			t.Errorf("Actual does not match expected JSON. Expected '%s'. Got '%s'", expectedJson, actual)
 		}
 	})
 
@@ -73,7 +73,7 @@ func TestJsonTransformer(t *testing.T) {
 		}
 
 		if actual.Password != expectedUser.Password {
-			t.Errorf("Actual Email does not match expected value. Expected '%s'. Got '%s'", expectedUser.Password, actual.Password)
+			t.Errorf("Actual Password does not match expected value. Expected '%s'. Got '%s'", expectedUser.Password, actual.Password)
 		}
 
 		if !reflect.DeepEqual(actual.Roles, expectedUser.Roles) {
