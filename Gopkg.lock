@@ -22,6 +22,18 @@
   version = "v1.4.1"
 
 [[projects]]
+  digest = "1:e5d10dd0f618f8391908cfc500811e1f4c40f12db00cc71f0aea508b83d8a862"
+  name = "github.com/golang-migrate/migrate"
+  packages = [
+    ".",
+    "database",
+    "source",
+  ]
+  pruneopts = "UT"
+  revision = "4937cd088f7c7193ee59b319c1c2caa7482aae8e"
+  version = "v3.5.4"
+
+[[projects]]
   digest = "1:c25289f43ac4a68d88b02245742347c94f1e108c534dda442188015ff80669b3"
   name = "google.golang.org/appengine"
   packages = ["cloudsql"]
@@ -34,7 +46,9 @@
   analyzer-version = 1
   input-imports = [
     "github.com/DATA-DOG/godog",
+    "github.com/DATA-DOG/godog/gherkin",
     "github.com/go-sql-driver/mysql",
+    "github.com/golang-migrate/migrate",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
