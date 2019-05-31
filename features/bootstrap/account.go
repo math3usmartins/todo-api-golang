@@ -21,14 +21,16 @@ func (accountContext AccountContext) Init(adapter mysql.Adapter) {
 }
 
 func (accountContext AccountContext) TheAccountServiceIsCalledToCreateAUserWithTheFollowingInformation(dataTable *gherkin.DataTable) error {
+	var err error
+
 	row := dataTable.Rows[1]
 
-	accountContext.service.SignUp(
+	err = accountContext.service.SignUp(
 		row.Cells[0].Value,
 		row.Cells[1].Value,
 	)
 
-	return nil
+	return err
 }
 
 func (accountContext AccountContext) AUserCanBeFoundByEmail(email string) error {
