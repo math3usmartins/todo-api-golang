@@ -13,7 +13,3 @@ func (service Service) WithRepository(repository Repository) {
 func (service Service) SignUp(email string, password string) error {
 	return errors.New("This method needs to be implemented.")
 }
-
-func (service Service) SignIn(email string, password string) error {
-	return errors.New("This method needs to be implemented.")
-}
