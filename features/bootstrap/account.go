@@ -12,20 +12,12 @@ type AccountContext struct {
 	service account.Service
 }
 
-func (accountContext AccountContext) Init(adapter mysql.Adapter) error {
-	var err error
-
+func (accountContext AccountContext) Init(adapter mysql.Adapter) {
 	accountRepository := repository.NewRepository(adapter)
 
 	service := account.Service{}
 
-	err = service.WithRepository(accountRepository)
-
-	if err != nil {
-		return err
-	}
-
-	return nil
+	service.WithRepository(accountRepository)
 }
 
 func (accountContext AccountContext) TheAccountServiceIsCalledToCreateAUserWithTheFollowingInformation(dataTable *gherkin.DataTable) error {

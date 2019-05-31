@@ -22,11 +22,7 @@ func FeatureContext(s *godog.Suite) {
 
 	accountContext := bootstrap.AccountContext{}
 
-	err = accountContext.Init(adapter)
-
-	if err != nil {
-		panic(err)
-	}
+	accountContext.Init(adapter)
 
 	s.Step(
 		`^the account service is called to create a user with the following information:$`,
