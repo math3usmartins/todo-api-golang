@@ -31,3 +31,7 @@ func (adapter Adapter) WithDriver(driver mysql.MySQLDriver) {
 func (adapter Adapter) GetDriver() mysql.MySQLDriver {
 	return adapter.driver
 }
+
+func (adapter Adapter) GetConnection() driver.Conn {
+	return adapter.connection
+}
