@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: ./docker/api
+      dockerfile: Dockerfile
+    environment:
+      TODO_API_DATABASE_DSN: "api_db_user:api_db_pwd@tcp(database)/api_db"
