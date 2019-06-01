@@ -7,3 +7,11 @@ services:
       dockerfile: Dockerfile
     environment:
       TODO_API_DATABASE_DSN: "api_db_user:api_db_pwd@tcp(database)/api_db"
+
+  database:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: api_db_root_pwd
+      MYSQL_DATABASE: api_db
+      MYSQL_USER: api_db_user
+      MYSQL_PASSWORD: api_db_pwd
