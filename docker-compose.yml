@@ -15,3 +15,13 @@ services:
       MYSQL_DATABASE: api_db
       MYSQL_USER: api_db_user
       MYSQL_PASSWORD: api_db_pwd
+
+  migrate:
+    build:
+      context: ./docker/migration
+      dockerfile: Dockerfile
+    command: api-db-migrate up
+    depends_on:
+      - database
+    environment:
+      TODO_API_DATABASE_DSN: "api_db_user:api_db_pwd@tcp(database)/api_db"
